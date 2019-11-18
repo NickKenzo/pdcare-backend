@@ -1,4 +1,6 @@
 <?php
+//This file gets profile information and verifies login information
+//No Known Bugs
  
  //Read in post conditions
  $username = $_REQUEST['username'];
