@@ -1,4 +1,7 @@
 <?php
+
+//This file allows you to read the 10 most recent scores for a specific user
+//No Known Apps
  
 // Create connection
 $con=mysqli_connect("localhost","pdcareon_admin","pdcareadmin","pdcareon_Users");
