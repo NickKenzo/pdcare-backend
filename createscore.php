@@ -1,5 +1,8 @@
 <?php
- 
+//This file creates a score using a specific web call
+//No Known Bugs
+
+
  //Read in post conditions
  $username = $_REQUEST['username'];
  $password = $_REQUEST['password'];
