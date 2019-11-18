@@ -1,4 +1,7 @@
 <?php
+//This file just allows a full infomation read of the database
+//This will be made private soon
+//No Known Bugs
  
 // Create connection
 $con=mysqli_connect("localhost","pdcareon_admin","pdcareadmin","pdcareon_Users");
