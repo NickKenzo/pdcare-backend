@@ -1,6 +1,4 @@
 <?php
-//This file gets profile information and verifies login information
-//No Known Bugs
  
  //Read in post conditions
  $username = $_REQUEST['username'];
@@ -21,7 +19,7 @@ if (mysqli_connect_errno())
 }
 
 $sql = "SELECT * from profiles where uname='".$uname."' and upwd='".$upwd."'";
-print $sql;
+//print $sql;
 if ($result = mysqli_query($con, $sql))
 {
  // If so, then create a results array and a temporary one

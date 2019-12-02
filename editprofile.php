@@ -3,9 +3,10 @@
  //Read in post conditions
  $username = $_REQUEST['username'];
  $password = $_REQUEST['password'];
- $name = $_REQUEST['name'];
- $score = $_REQUEST['score'];
- $game = $_REQUEST['game'];
+ $uid = $_REQUEST['uid'];
+ $email = $_REQUEST['email'];
+ $uname = $_REQUEST['uname'];
+ $upwd = $_REQUEST['upwd'];
  
  //var_dump($_REQUEST);
 // Create connection
@@ -16,14 +17,14 @@ if (mysqli_connect_errno())
 {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
-$selectsql = "select uid from profiles where name='".$name."';";
+$selectsql = "select * from profiles where uid=".$uid.";";
 $result = mysqli_query($con, $selectsql);
 $row = $result->fetch_row();
 if ($row != NULL)
 {
     //var_dump($row);
 	$uid = $row[0];
-	$sql = "INSERT into scores (uid, score, game) VALUES (".$uid.", ".$score.", ".$game.")";
+	$sql = "update profiles set email='".$email."', uname='".$uname."', upwd='".$upwd."' where uid=".$uid;
     print $sql;
     if (mysqli_query($con, $sql))
     {
@@ -33,7 +34,7 @@ if ($row != NULL)
     }
 
 }else{
-    echo "There is no user with that name";
+    echo "There is no user with that uid";
     exit();
 }
 

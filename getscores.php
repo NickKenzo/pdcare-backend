@@ -1,7 +1,4 @@
 <?php
-
-//This file allows you to read the 10 most recent scores for a specific user
-//No Known Apps
  
 // Create connection
 $con=mysqli_connect("localhost","pdcareon_admin","pdcareadmin","pdcareon_Users");
@@ -9,7 +6,7 @@ $con=mysqli_connect("localhost","pdcareon_admin","pdcareadmin","pdcareon_Users")
  
  $username = $_REQUEST['username'];
  $password = $_REQUEST['password'];
- $name = $_REQUEST['name'];
+ $uname = $_REQUEST['uname'];
  $game = $_REQUEST['game'];
  
 // Check connection
@@ -19,7 +16,7 @@ if (mysqli_connect_errno())
 }
 
 
-$selectsql = "select uid from profiles where name='".$name."';";
+$selectsql = "select uid from profiles where uname='".$uname."';";
 
 if ($result = mysqli_query($con, $selectsql))
 {
@@ -33,7 +30,7 @@ if ($result = mysqli_query($con, $selectsql))
 
  
 // This SQL statement selects ALL from the table 'Locations'
-$sql = "SELECT * FROM scores where uid=".$uid." and game=".$game." order by date desc LIMIT 10";
+$sql = "SELECT * FROM scores where uid=".$uid." and game=".$game." order by date desc";
  
 // Check if there are results
 if ($result = mysqli_query($con, $sql))

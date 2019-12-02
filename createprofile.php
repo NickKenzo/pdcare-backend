@@ -1,8 +1,5 @@
 <?php
-//This file creates a profile using a specific web call
-//No Known Bugs
-
-
+ 
  //Read in post conditions
  $username = $_REQUEST['username'];
  $password = $_REQUEST['password'];
@@ -21,7 +18,10 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 $selectsql = "select * from profiles where email='".$email."' or uname='".$uname."'";
-if ($result = mysqli_query($con, $selectsql))
+print($selectsql);
+$result = mysqli_query($con, $selectsql);
+var_dump($result);
+if ($result->fetch_row())
 {
     echo "There is already a user with that email or username. Please try again with different credentials.";
 }else{
